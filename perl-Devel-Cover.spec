@@ -4,7 +4,7 @@
 #
 Name     : perl-Devel-Cover
 Version  : 1.31
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.31.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.31.tar.gz
 Summary  : Perl/CPAN Module Devel::Cover: Code coverage metrics for Perl
