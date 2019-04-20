@@ -4,10 +4,10 @@
 #
 Name     : perl-Devel-Cover
 Version  : 1.31
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.31.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.31.tar.gz
-Summary  : 'Code coverage metrics for Perl'
+Summary  : Perl/CPAN Module Devel::Cover: Code coverage metrics for Perl
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Devel-Cover-bin = %{version}-%{release}
@@ -30,7 +30,6 @@ measure of quality.
 Summary: bin components for the perl-Devel-Cover package.
 Group: Binaries
 Requires: perl-Devel-Cover-license = %{version}-%{release}
-Requires: perl-Devel-Cover-man = %{version}-%{release}
 
 %description bin
 bin components for the perl-Devel-Cover package.
@@ -42,6 +41,7 @@ Group: Development
 Requires: perl-Devel-Cover-lib = %{version}-%{release}
 Requires: perl-Devel-Cover-bin = %{version}-%{release}
 Provides: perl-Devel-Cover-devel = %{version}-%{release}
+Requires: perl-Devel-Cover = %{version}-%{release}
 
 %description dev
 dev components for the perl-Devel-Cover package.
