@@ -4,7 +4,7 @@
 #
 Name     : perl-Devel-Cover
 Version  : 1.33
-Release  : 21
+Release  : 22
 URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.33.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.33.tar.gz
 Summary  : 'Code coverage metrics for Perl'
@@ -14,6 +14,7 @@ Requires: perl-Devel-Cover-bin = %{version}-%{release}
 Requires: perl-Devel-Cover-license = %{version}-%{release}
 Requires: perl-Devel-Cover-man = %{version}-%{release}
 Requires: perl-Devel-Cover-perl = %{version}-%{release}
+Requires: perl(B::Debug)
 Requires: perl(Sereal::Decoder)
 Requires: perl(Sereal::Encoder)
 BuildRequires : buildreq-cpan
