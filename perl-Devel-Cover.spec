@@ -4,13 +4,14 @@
 #
 Name     : perl-Devel-Cover
 Version  : 1.36
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.36.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.36.tar.gz
 Summary  : 'Code coverage metrics for Perl'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Devel-Cover-bin = %{version}-%{release}
+Requires: perl-Devel-Cover-license = %{version}-%{release}
 Requires: perl-Devel-Cover-man = %{version}-%{release}
 Requires: perl-Devel-Cover-perl = %{version}-%{release}
 Requires: perl(B::Debug)
@@ -32,6 +33,7 @@ measure of quality.
 %package bin
 Summary: bin components for the perl-Devel-Cover package.
 Group: Binaries
+Requires: perl-Devel-Cover-license = %{version}-%{release}
 
 %description bin
 bin components for the perl-Devel-Cover package.
@@ -46,6 +48,14 @@ Requires: perl-Devel-Cover = %{version}-%{release}
 
 %description dev
 dev components for the perl-Devel-Cover package.
+
+
+%package license
+Summary: license components for the perl-Devel-Cover package.
+Group: Default
+
+%description license
+license components for the perl-Devel-Cover package.
 
 
 %package man
@@ -91,6 +101,8 @@ make TEST_VERBOSE=1 test || :
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Devel-Cover
+cp %{_builddir}/Devel-Cover-1.36/LICENCE %{buildroot}/usr/share/package-licenses/perl-Devel-Cover/12ebf0bbc85a2d5b767a1bb536fcf0ad6cfe3ff5
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -157,6 +169,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Devel::Cover::Util.3
 /usr/share/man/man3/Devel::Cover::Web.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Devel-Cover/12ebf0bbc85a2d5b767a1bb536fcf0ad6cfe3ff5
+
 %files man
 %defattr(0644,root,root,0755)
 /usr/share/man/man1/cover.1
@@ -165,49 +181,49 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Annotation/Git.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Annotation/Random.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Annotation/Svk.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Branch.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Collection.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Condition.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Condition_and_2.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Condition_and_3.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Condition_or_2.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Condition_or_3.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Condition_xor_4.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Criterion.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/Digests.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/File.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/IO.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Base.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/IO/JSON.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Sereal.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Storable.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/DB/Structure.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Html_Common.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Inc.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Op.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Pod.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Compilation.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Html.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Html_basic.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Html_minimal.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Html_subtle.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Json.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Sort.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Text.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Text2.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Report/Vim.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Statement.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Subroutine.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Test.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Time.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Truth_Table.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Tutorial.pod
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Util.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Devel/Cover/Web.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/Devel/Cover/Cover.so
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Annotation/Git.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Annotation/Random.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Annotation/Svk.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Branch.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Collection.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Condition.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Condition_and_2.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Condition_and_3.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Condition_or_2.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Condition_or_3.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Condition_xor_4.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Criterion.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/Digests.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/File.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/IO.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/IO/JSON.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Sereal.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Storable.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/DB/Structure.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Html_Common.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Inc.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Op.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Pod.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Compilation.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Html.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Html_basic.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Html_minimal.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Html_subtle.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Json.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Sort.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Text.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Text2.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Report/Vim.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Statement.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Subroutine.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Test.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Time.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Truth_Table.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Tutorial.pod
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Util.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Devel/Cover/Web.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/Devel/Cover/Cover.so
