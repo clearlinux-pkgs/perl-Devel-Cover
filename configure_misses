@@ -6,3 +6,4 @@ Configure miss: Perl::Tidy         version 20060719 .
 Configure miss: Pod::Coverage      version 0.06     .
 Configure miss: Test::Differences                   .
 Configure miss: Browser::Open                       .
+Configure miss: HTML::Entities                      .
