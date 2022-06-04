@@ -4,7 +4,7 @@
 #
 Name     : perl-Devel-Cover
 Version  : 1.36
-Release  : 33
+Release  : 34
 URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.36.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.36.tar.gz
 Summary  : 'Code coverage metrics for Perl'
@@ -181,49 +181,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Annotation/Git.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Annotation/Random.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Annotation/Svk.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Branch.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Collection.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Condition.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Condition_and_2.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Condition_and_3.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Condition_or_2.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Condition_or_3.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Condition_xor_4.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Criterion.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/Digests.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/File.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/IO.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Base.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/IO/JSON.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Sereal.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/IO/Storable.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/DB/Structure.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Html_Common.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Inc.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Op.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Pod.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Compilation.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Html.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Html_basic.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Html_minimal.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Html_subtle.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Json.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Sort.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Text.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Text2.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Report/Vim.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Statement.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Subroutine.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Test.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Time.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Truth_Table.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Tutorial.pod
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Util.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/Devel/Cover/Web.pm
-/usr/lib/perl5/vendor_perl/5.34.0/x86_64-linux-thread-multi/auto/Devel/Cover/Cover.so
+/usr/lib/perl5/*
