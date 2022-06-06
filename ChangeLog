@@ -1,5 +1,8 @@
 Devel::Cover history
 
+1.38 - 5 June 2022
+ - Improve documentation
+
 1.37 - 5 June 2022
  - Fix Subroutine module docs (bkerin) (GH-262)
  - Use github actions instead of travis (Zakariyya Mughal) (GH-291)
