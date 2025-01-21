@@ -7,7 +7,7 @@
 #
 Name     : perl-Devel-Cover
 Version  : 1.44
-Release  : 45
+Release  : 46
 URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.44.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.44.tar.gz
 Summary  : 'Code coverage metrics for Perl'
