@@ -1,4 +1,5 @@
 Configure miss: Browser::Open                       .
+Configure miss: Digest::MD5                         .
 Configure miss: JSON::MaybeXS                       .
 Configure miss: PPI::HTML          version 1.07     .
 Configure miss: Perl::Tidy         version 20060719 .
