@@ -6,14 +6,15 @@
 # autospec commit: 9594167
 #
 Name     : perl-Devel-Cover
-Version  : 1.45
-Release  : 49
-URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.45.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.45.tar.gz
+Version  : 1.46
+Release  : 50
+URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.46.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.46.tar.gz
 Summary  : 'Code coverage metrics for Perl'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Devel-Cover-bin = %{version}-%{release}
+Requires: perl-Devel-Cover-license = %{version}-%{release}
 Requires: perl-Devel-Cover-man = %{version}-%{release}
 Requires: perl-Devel-Cover-perl = %{version}-%{release}
 Requires: perl(B::Debug)
@@ -38,6 +39,7 @@ measure of quality.
 %package bin
 Summary: bin components for the perl-Devel-Cover package.
 Group: Binaries
+Requires: perl-Devel-Cover-license = %{version}-%{release}
 
 %description bin
 bin components for the perl-Devel-Cover package.
@@ -52,6 +54,14 @@ Requires: perl-Devel-Cover = %{version}-%{release}
 
 %description dev
 dev components for the perl-Devel-Cover package.
+
+
+%package license
+Summary: license components for the perl-Devel-Cover package.
+Group: Default
+
+%description license
+license components for the perl-Devel-Cover package.
 
 
 %package man
@@ -72,10 +82,10 @@ perl components for the perl-Devel-Cover package.
 
 
 %prep
-%setup -q -n Devel-Cover-1.45
-cd %{_builddir}/Devel-Cover-1.45
+%setup -q -n Devel-Cover-1.46
+cd %{_builddir}/Devel-Cover-1.46
 pushd ..
-cp -a Devel-Cover-1.45 buildavx2
+cp -a Devel-Cover-1.46 buildavx2
 popd
 
 %build
@@ -100,6 +110,8 @@ make TEST_VERBOSE=1 test || :
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Devel-Cover
+cp %{_builddir}/Devel-Cover-%{version}/LICENCE %{buildroot}/usr/share/package-licenses/perl-Devel-Cover/3ad924d69a306ef8ea578a7c38acc7c552f53da1 || :
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -166,6 +178,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Devel::Cover::Tutorial.3
 /usr/share/man/man3/Devel::Cover::Util.3
 /usr/share/man/man3/Devel::Cover::Web.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Devel-Cover/3ad924d69a306ef8ea578a7c38acc7c552f53da1
 
 %files man
 %defattr(0644,root,root,0755)
