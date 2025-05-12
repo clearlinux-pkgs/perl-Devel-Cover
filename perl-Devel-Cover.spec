@@ -6,10 +6,10 @@
 # autospec commit: 9594167
 #
 Name     : perl-Devel-Cover
-Version  : 1.47
-Release  : 51
-URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.47.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.47.tar.gz
+Version  : 1.48
+Release  : 52
+URL      : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.48.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/P/PJ/PJCJ/Devel-Cover-1.48.tar.gz
 Summary  : 'Code coverage metrics for Perl'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -82,10 +82,10 @@ perl components for the perl-Devel-Cover package.
 
 
 %prep
-%setup -q -n Devel-Cover-1.47
-cd %{_builddir}/Devel-Cover-1.47
+%setup -q -n Devel-Cover-1.48
+cd %{_builddir}/Devel-Cover-1.48
 pushd ..
-cp -a Devel-Cover-1.47 buildavx2
+cp -a Devel-Cover-1.48 buildavx2
 popd
 
 %build
